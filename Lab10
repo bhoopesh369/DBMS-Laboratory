@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<EmployeeDetails>
+<Employee>
+<Eno>1</Eno>
+<Ename>John lm</Ename>
+<Job>plumber</Job>
+<Workinghours>1</Workinghours>
+<Dept>cse</Dept>
+<DeptNo>1</DeptNo>
+<Salary>1213</Salary>
+</Employee>
+<Employee>
+<Eno>2</Eno>
+<Ename>daniel b</Ename>
+<Job>software</Job>
+<Workinghours>12</Workinghours>
+<Dept>ece</Dept>
+<DeptNo>2</DeptNo>
+
+<Salary>1368</Salary>
+</Employee>
+<Employee>
+<Eno>3</Eno>
+<Ename>jeffrey g</Ename>
+<Job>software</Job>
+<Workinghours>12</Workinghours>
+<Dept>Research</Dept>
+<DeptNo>2</DeptNo>
+<Salary>114118</Salary>
+</Employee>
+<Employee>
+<Eno>4</Eno>
+<Ename>william s</Ename>
+<Job>software</Job>
+<Workinghours>12</Workinghours>
+<Dept>ece</Dept>
+<DeptNo>2</DeptNo>
+<Salary>136813</Salary>
+</Employee>
+<Employee>
+<Eno>5</Eno>
+<Ename>Samuel joe</Ename>
+<Job>software</Job>
+<Workinghours>12</Workinghours>
+<Dept>human</Dept>
+<DeptNo>2</DeptNo>
+<Salary>68</Salary>
+</Employee>
+</EmployeeDetails>
+<?xml version="1.0"?>
+<!-- New XML document created with EditiX XML Editor
+(http://www.editix.com) at Thu Oct 19 16:35:49 IST 2023 -->
+<StudentDetails>
+<Student>
+<STUID>1</STUID>
+<SName>Student1</SName>
+<Course>BTech</Course>
+<Dept>cse</Dept>
+<Subject>DSA
+<Marks>14</Marks>
+</Subject>
+<Subject>KHV
+<Marks>90</Marks>
+</Subject>
+</Student>
+<Student>
+<STUID>2</STUID>
+<SName>Student2</SName>
+<Course>BTech</Course>
+<Dept>ece</Dept>
+<Subject>DSA
+<Marks>14</Marks>
+
+</Subject>
+<Subject>KHV
+<Marks>90</Marks>
+</Subject>
+</Student>
+<Student>
+<STUID>3</STUID>
+<SName>Student3</SName>
+<Course>BTech</Course>
+<Dept>cse</Dept>
+<Subject>DSA
+<Marks>14</Marks>
+</Subject>
+<Subject>KHV
+<Marks>90</Marks>
+</Subject>
+</Student>
+<Student>
+<STUID>4</STUID>
+<SName>Student4</SName>
+<Course>BTech</Course>
+<Dept>mech</Dept>
+<Subject>DSA
+<Marks>14</Marks>
+</Subject>
+<Subject>KHV
+<Marks>90</Marks>
+</Subject>
+</Student>
+<Student>
+<STUID>5</STUID>
+<SName>Student5</SName>
+<Course>BTech</Course>
+<Dept>eee</Dept>
+<Subject>DSA
+<Marks>14</Marks>
+</Subject>
+<Subject>KHV
+<Marks>90</Marks>
+</Subject>
+</Student>
+</StudentDetails>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New XML document created with EditiX XML Editor
+(http://www.editix.com) at Thu Oct 19 16:35:49 IST 2023 -->
+<FlightDetails>
+<Flight>
+<FlNo>1</FlNo>
+<FlName>Boeing737</FlName>
+<PilotName>pilot1</PilotName>
+<From>delhi</From>
+
+<To>Pune</To>
+<DateDeparts>13</DateDeparts>
+<Arrives>12</Arrives>
+<Price>1308</Price>
+</Flight>
+<Flight>
+<FlNo>2</FlNo>
+<FlName>Boeing137</FlName>
+<PilotName>pilot2</PilotName>
+<From>delhi</From>
+<To>Pune</To>
+<DateDeparts>13</DateDeparts>
+<Arrives>12</Arrives>
+<Price>24424</Price>
+</Flight>
+<Flight>
+<FlNo>3</FlNo>
+<FlName>AirAsia</FlName>
+<PilotName>pilot2</PilotName>
+<From>delhi</From>
+<To>Pune</To>
+<DateDeparts>13</DateDeparts>
+<Arrives>12</Arrives>
+<Price>2462424</Price>
+</Flight>
+<Flight>
+<FlNo>4</FlNo>
+<FlName>Emirates</FlName>
+<PilotName>pilot3</PilotName>
+<From>delhi</From>
+<To>Pune</To>
+<DateDeparts>13</DateDeparts>
+<Arrives>12</Arrives>
+<Price>567953</Price>
+</Flight>
+<Flight>
+<FlNo>5</FlNo>
+<FlName>Kingfisher</FlName>
+<PilotName>pilot1</PilotName>
+<From>delhi</From>
+<To>Pune</To>
+<DateDeparts>13</DateDeparts>
+<Arrives>12</Arrives>
+<Price>16793</Price>
+</Flight>
+</FlightDetails>
+
+
+<!-- XQUERY -->
+
+(:
+for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+where $emp/Salary >= 30000
+return $emp
+
+:)
+(: for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+where $emp/name like 'S%'
+return $emp
+:)
+(: for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+where $emp/Dept = "Research"
+return $emp
+:)
+(: for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+where $emp/Workinghours >= 8
+return $emp
+:)
+(:
+for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+order by $emp/Salary
+return $emp
+:)
+(:
+for $emp in
+doc("/home/nitt/DBMSLAB10/employee.xml")/EmployeeDetails/Employee
+order by $emp/Ename
+return $emp
+:)
+(: 2nd question :)
+(:
+for $stu in doc("student.xml")/StudentDetails/Student/Subject
+where $stu/Marks > 75
+return $stu
+:)
+(:
+for $stu in doc("student.xml")/StudentDetails/Student
+where $stu/STUID = 1
+return avg($stu/Subject/Marks)
+:)
+(:
+for $stu in doc("student.xml")/StudentDetails/Student
+where $stu/STUID = 1
+return sum($stu/Subject/Marks)
+:)
+
+(:
+for $stu in doc("student.xml")/StudentDetails/Student
+where $stu/STUID = 1
+return min($stu/Subject/Marks)
+:)
+(:
+for $stu in doc("student.xml")/StudentDetails/Student
+where $stu/STUID = 1
+return max($stu/Subject/Marks)
+:)
+(:3rd question :)
+(:
+for $fl in doc("flight.xml")/FlightDetails/Flight
+where $fl/Price < 50000
+return $fl
+:)
+(:
+for $fl in doc("flight.xml")/FlightDetails/Flight
+where $fl/DateDeparts = "4.12.2020" and $fl/From = "delhi"
+return $fl
+:)
+(:
+for $fl in doc("flight.xml")/FlightDetails/Flight
+where $fl/PilotName "pilot1"
+return $fl
+:)
+(:
+for $fl in doc("flight.xml")/FlightDetails/Flight
+where $fl/DateDeparts = "30.11.2020" and $fl/FlName = "Boeing737"
+return count($fl)
+:)
+(:
+for $fl in doc("flight.xml")/FlightDetails/Flight
+where $fl/DateDeparts = "4.12.2020" and $fl/From = "delhi"
+return $fl/Arrives
+:)
+(: 4th question :)
+(:
+for $emp in doc("/home/nitt/employee.xml")/EmployeeDetails/Employee
+where $emp/Dept = "human resources"
+return $emp
+:)
+(:
+for $emp in doc("/home/nitt/employee.xml")/EmployeeDetails/Employee
+
+where $emp/Project = "Project1" and $emp/Salary > 30000
+return $emp
+:)
+(:
+for $emp in doc("/home/nitt/employee.xml")/EmployeeDetails/Employee
+where $emp/Dept = "ece"
+return sum($emp/Salary)
+:)
+(:
+for $emp in doc("/home/nitt/employee.xml")/EmployeeDetails
+where $emp/Employee/Dept = "ece"
+return count($emp/Employee)
+:)
+(:
+for $emp in doc("/home/nitt/employee.xml")/EmployeeDetails
+where $emp/Employee/Dept = "ece"
+return max($emp/Employee/Salary)
+:)
